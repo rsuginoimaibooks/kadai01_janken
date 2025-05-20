@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+    <h1>じゃんけん</h1>
+</header>
+
+<main>
+    <ul>
+        <li id="gu_btn">グー</li>
+        <li id="cho_btn">チョキ</li>
+        <li id="par_btn">パー</li>
+    </ul>
+        <div><H1>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</H1></div>
+        <div id="judgment"><h2>判定↓</h2></div>
+        <div><h1>勝ち負けの結果は？「<span id="syohai"></span>」</h1></div>
+        <div id="emotion"><img src="" alt=""></div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+// グーを選択したとき
+$("#gu_btn").on("click",function(){
+    const r = Math.ceil(Math.random()*3);
+        if(r==1){
+            $("#syohai").html("あなたは何とかあいこに持ち込みました")
+            $("#pc_hands").html("グー");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/normal.png">');
+        }
+        if(r==2){
+            $("#syohai").html("あなたはかろうじて勝つことができました")
+            $("#pc_hands").html("チョキ");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/happy.png">');
+        }
+        if(r==3){
+            $("#syohai").html("あなたは惜しくも負けてしまいました")
+            $("#pc_hands").html("パー");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/sad.png">');
+        }
+});
+
+// チョキを選択したとき
+$("#cho_btn").on("click",function(){
+    const r = Math.ceil(Math.random()*3);
+        if(r==1){
+            $("#syohai").html("あなたは惜しくも負けてしまいました")
+            $("#pc_hands").html("グー");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/sad.png">');
+        }
+        if(r==2){
+            $("#syohai").html("あなたは何とかあいこに持ち込みました")
+            $("#pc_hands").html("チョキ");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/normal.png">');
+        }
+        if(r==3){
+            $("#syohai").html("あなたはかろうじて勝つことができました")
+            $("#pc_hands").html("パー");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/happy.png">');
+        }
+});
+
+// パーを選択したとき
+$("#par_btn").on("click",function(){
+    const r = Math.ceil(Math.random()*3);
+        if(r==1){
+            $("#syohai").html("あなたはかろうじて勝つことができました")
+            $("#pc_hands").html("グー");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/happy.png">');
+        }
+        if(r==2){
+            $("#syohai").html("あなたは惜しくも負けてしまいました")
+            $("#pc_hands").html("チョキ");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/sad.png">');
+        }
+        if(r==3){
+            $("#syohai").html("あなたは何とかあいこに持ち込みました")
+            $("#pc_hands").html("パー");
+            $("#pc_hands").fadeOut(1000).fadeIn(1000); //フェードアウト>フェードイン
+            $("#emotion").html('<img src="./img/normal.png">');
+        }
+});
+
+
+// // 赤色
+// $("#pc_hands").css("color", "#ff0000");
+// // 緑色
+// $("#pc_hands").css("color", "#00ff00");
+// // 青色
+// $("#pc_hands").css("color", "#0000ff");
+
+
+</script>
+</body>
+</html>
